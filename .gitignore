@@ -12,3 +12,4 @@ dist/
 *.pyc
 *.db
 *.sqlite
+tsconfig.tsbuildinfo
