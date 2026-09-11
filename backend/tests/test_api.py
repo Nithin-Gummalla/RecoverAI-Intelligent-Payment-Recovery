@@ -71,7 +71,7 @@ async def test_invalid_transaction():
 
 @pytest.mark.asyncio
 async def test_razorpay_invalid_signature_is_rejected(monkeypatch):
-    monkeypatch.setenv("RAZORPAY_WEBHOOK_SECRET", "qa-webhook-secret")
+    monkeypatch.setenv("RAZORPAY_WEBHOOK_SECRET", "placeholder_webhook_secret_value")
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as ac:
         response = await ac.post("/api/webhooks/razorpay", content=b"{}", headers={"x-razorpay-signature": "invalid"})
@@ -80,7 +80,7 @@ async def test_razorpay_invalid_signature_is_rejected(monkeypatch):
 
 @pytest.mark.asyncio
 async def test_razorpay_webhook_is_idempotent(monkeypatch):
-    secret = "qa-webhook-secret"
+    secret = "placeholder_webhook_secret_value"
     monkeypatch.setenv("RAZORPAY_WEBHOOK_SECRET", secret)
     payment_id = f"pay_qa_{uuid.uuid4().hex}"
     payload = {

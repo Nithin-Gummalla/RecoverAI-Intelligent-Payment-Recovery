@@ -94,9 +94,9 @@ Create a `.env` file in the `backend/` directory and `.env.local` in the root (N
 **`backend/.env` (Example):**
 ```env
 DATABASE_URL=postgresql://user:password@localhost:5432/recoverai
-RAZORPAY_KEY_ID=rzp_test_...
-RAZORPAY_KEY_SECRET=your_razorpay_secret
-GEMINI_API_KEY=your_gemini_api_key
+RAZORPAY_KEY_ID=rzp_test_placeholder_id
+RAZORPAY_KEY_SECRET=placeholder_secret_string
+GEMINI_API_KEY=placeholder_gemini_key
 ```
 
 **`.env.local` (Frontend - Example):**
